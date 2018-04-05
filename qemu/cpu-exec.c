@@ -115,6 +115,9 @@ int cpu_exec(struct uc_struct *uc, CPUArchState *env)   // qq
                     if (ret == EXCP_DEBUG) {
                         cpu_handle_debug_exception(env);
                     }
+                    #if defined(TARGET_ARM)
+                        env->pc += 0x4;
+                    #endif
                     break;
                 } else {
 #if defined(CONFIG_USER_ONLY)

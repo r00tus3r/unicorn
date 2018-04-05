@@ -79,7 +79,7 @@ int arm_reg_read(struct uc_struct *uc, unsigned int *regs, void **vals, int coun
                     break;
                 //case UC_ARM_REG_PC:
                 case UC_ARM_REG_R15:
-                    *(int32_t *)value = ARM_CPU(uc, mycpu)->env.regs[15];
+                    *(int32_t *)value = ARM_CPU(uc, mycpu)->env.pc;
                     break;
                 case UC_ARM_REG_C1_C0_2:
                     *(int32_t *)value = ARM_CPU(uc, mycpu)->env.cp15.c1_coproc;
